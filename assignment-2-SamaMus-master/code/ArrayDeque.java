@@ -12,11 +12,11 @@ package code;
  * 
  * */
 
+import given.Util;
 import given.iDeque;
+
 import java.util.Arrays;
 import java.util.Iterator;
-
-import given.Util;
 
 
 /*
@@ -28,9 +28,9 @@ import given.Util;
 public class ArrayDeque<E> implements iDeque<E> {
 
   private E[] A; //Do not change this name!
-  private int front;
-  private int back;
-  private int size;
+  protected int front; //private
+  protected int back; //private
+  protected int size; //private
   /*
    * ADD FIELDS IF NEEDED
    */
@@ -157,7 +157,8 @@ public class ArrayDeque<E> implements iDeque<E> {
   public Iterator<E> iterator() {
     // TODO Auto-generated method stub
     //Hint: Fill in the ArrayDequeIterator given below and return a new instance of it
-    return null;
+    Iterator<E> o = null;
+    return o;
   }
   
   private final class ArrayDequeIterator implements Iterator<E> {
