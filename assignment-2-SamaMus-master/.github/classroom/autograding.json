@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "Autograde",
+      "setup": "javac given/*.java",
+      "run": "java -cp . given.Main",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}

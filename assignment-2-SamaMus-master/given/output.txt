@@ -1,0 +1,49 @@
+Song: song1 -- by a1 -- released in 1990
+Song: song2 -- by a2 -- released in 1992
+Song: song3 -- by a3 -- released in 1994
+Song: song4 -- by a4 -- released in 2000
+Song: song5 -- by a7 -- released in 2993
+Song: song6 -- by a8 -- released in 1996
+*****
+Song: song1 -- by a1 -- released in 1990
+Song: song2 -- by a2 -- released in 1992
+Song: song3 -- by a3 -- released in 1994
+Song: song4 -- by a4 -- released in 2000
+Song: song5 -- by a7 -- released in 2993
+Song: song6 -- by a8 -- released in 1996
+Song: song7 -- by a1 -- released in 2000
+Song: song8 -- by a2 -- released in 2002
+*****
+Song: song2 -- by a2 -- released in 1992
+Song: song3 -- by a3 -- released in 1994
+Song: song5 -- by a7 -- released in 2993
+Song: song6 -- by a8 -- released in 1996
+Song: song8 -- by a2 -- released in 2002
+*****
+Song: song6 -- by a8 -- released in 1996
+Song: song5 -- by a7 -- released in 2993
+Song: song4 -- by a4 -- released in 2000
+Song: song3 -- by a3 -- released in 1994
+Song: song2 -- by a2 -- released in 1992
+Song: song1 -- by a1 -- released in 1990
+*****
+Song: song5 -- by a7 -- released in 2993
+Song: song1 -- by a1 -- released in 1990
+Song: song4 -- by a4 -- released in 2000
+Song: song2 -- by a2 -- released in 1992
+Song: song3 -- by a3 -- released in 1994
+Song: song6 -- by a8 -- released in 1996
+*****
+Song: song1 -- by a1 -- released in 1990
+Song: song2 -- by a2 -- released in 1992
+Song: song3 -- by a3 -- released in 1994
+Song: song4 -- by a4 -- released in 2000
+Song: song5 -- by a7 -- released in 2993
+Song: song6 -- by a8 -- released in 1996
+*****
+Song: song3 -- by a3 -- released in 1994
+Song: song4 -- by a4 -- released in 2000
+Song: song5 -- by a7 -- released in 2993
+Song: song6 -- by a8 -- released in 1996
+Song: song1 -- by a1 -- released in 1990
+Song: song2 -- by a2 -- released in 1992
