@@ -51,37 +51,42 @@ public class Queue<C extends iDeque<E>, E> implements iSimpleContainer <E> {
   public void push(E obj) {
     // TODO Auto-generated method stub
     Util.NotImplementedYetSoft();
+    deque.addLast(obj);
+
   }
 
   @Override
   public E pop() {
     // TODO Auto-generated method stub
     Util.NotImplementedYetSoft();
-    return null;
+    return deque.removeFirst();
   }
 
   @Override
   public E peek() {
     // TODO Auto-generated method stub
     Util.NotImplementedYetSoft();
-    return null;
-  }
+    return deque.peekFirst();
+     }
 
   @Override
   public int size() {
     // TODO Auto-generated method stub
-    return 0;
+    return deque.size();
+
   }
 
   @Override
   public boolean isEmpty() {
     // TODO Auto-generated method stub
-    return false;
+    return deque.isEmpty();
   }
 
   @Override
   public void clear() {
     // TODO Auto-generated method stub
-    
+    deque.clear();
+
+
   }
 }

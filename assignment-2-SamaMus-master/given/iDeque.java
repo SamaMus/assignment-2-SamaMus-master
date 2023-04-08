@@ -34,4 +34,11 @@ public interface iDeque<E> extends Iterable<E> {
   //Clear all the contents of the deque.
   public void clear();
 
+    void addLast(E obj);
+
+    <E> E removeFirst();
+
+    <E> E peekFirst();
+
+    <E> E peekFront();
 }

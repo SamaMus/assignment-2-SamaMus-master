@@ -25,7 +25,7 @@ import java.util.Iterator;
  * WARNING: Modulo operator (%) might create issues with negative numbers.
  * Use Math.floorMod instead if you are having issues
  */
-public class ArrayDeque<E> implements iDeque<E> {
+public abstract class ArrayDeque<E> implements iDeque<E> {
 
   private E[] A; //Do not change this name!
   protected int front; //private
@@ -91,6 +91,16 @@ public class ArrayDeque<E> implements iDeque<E> {
   /*
    * Below are the interface methods to be overriden
    */
+  public void resize(){
+    E[] B = createNewArrayWithSize(A.length * 2);
+    int i = 0;
+    for(E e: this) {
+      B[i++] = e;
+    }
+    front = 0;
+    back = size -1;
+    A = B;
+  }
 
   @Override
   public int size() {
@@ -188,7 +198,6 @@ public class ArrayDeque<E> implements iDeque<E> {
     // TODO Auto-generated method stub
     //Hint: Fill in the ArrayDequeIterator given below and return a new instance of it
     return new ArrayDequeIterator();
-    return o;
   }
 
   private final class ArrayDequeIterator implements Iterator<E> {
@@ -224,15 +233,15 @@ public class ArrayDeque<E> implements iDeque<E> {
       return element;
     }
 
-    private void resize() {
-      E[] B = createNewArrayWithSize(A.length * 2);
-      int i = 0;
-      for (E e : this) {
-        B[i++] = e;
-      }
-      A = B;
-      front = 0;
-      back = size;
-    }
+//    private void resize() {
+//      E[] B = createNewArrayWithSize(A.length * 2);
+//      int i = 0;
+//      for (E e : this) {
+//        B[i++] = e;
+//      }
+//      A = B;
+//      front = 0;
+//      back = size;
+//    }
   }
 }
