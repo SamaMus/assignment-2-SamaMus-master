@@ -13,9 +13,10 @@ package code;
  * 
  * */
 
-import given.iDeque;
-import java.util.Iterator;
 import given.Util;
+import given.iDeque;
+
+import java.util.Iterator;
 
 //If you have been following the class, it should be obvious by now how to implement a Deque wth a doubly linked list
 public class LLDeque<E> implements iDeque<E> {
@@ -23,6 +24,7 @@ public class LLDeque<E> implements iDeque<E> {
   //Use sentinel nodes. See slides if needed
   private Node<E> header;
   private Node<E> trailer;
+  private int size;
   
   /*
    * ADD FIELDS IF NEEDED
@@ -53,6 +55,7 @@ public class LLDeque<E> implements iDeque<E> {
     header  = new Node<E>(null, null, header);
     trailer = new Node<E>(null, trailer, header);
     header.next = trailer;
+    size = 0;
     
     /*
      * ADD CODE IF NEEDED
@@ -87,59 +90,91 @@ public class LLDeque<E> implements iDeque<E> {
   public int size() {
     // TODO Auto-generated method stub
     Util.NotImplementedYetSoft();
-    return 0;
+    return size;
   }
 
   @Override
   public boolean isEmpty() {
     // TODO Auto-generated method stub
     Util.NotImplementedYetSoft();
-    return false;
+    return size == 0;
   }
 
   @Override
   public void addFront(E o) {
     // TODO Auto-generated method stub
     Util.NotImplementedYetSoft();
+    Node<E> newNode = new Node<>(o, header.next, header);
+    header.next.prev = newNode;
+    header.next = newNode;
+    size++;
   }
 
   @Override
   public E removeFront() {
     // TODO Auto-generated method stub
     Util.NotImplementedYetSoft();
-    return null;
+    if (isEmpty()) {
+      return null;
+    }
+    Node<E> front = header.next;
+    header.next = front.next;
+    front.next.prev = header;
+    size--;
+    return front.element;
   }
 
   @Override
   public E front() {
     // TODO Auto-generated method stub
     Util.NotImplementedYetSoft();
-    return null;
+    if (isEmpty()) {
+      return null;
+    }
+    return header.next.element;
   }
 
   @Override
   public void addBehind(E o) {
     // TODO Auto-generated method stub
     Util.NotImplementedYetSoft();
+    Node<E> newNode = new Node<>(o, trailer, trailer.prev);
+    trailer.prev.next = newNode;
+    trailer.prev = newNode;
+    size++;
   }
 
   @Override
   public E removeBehind() {
     // TODO Auto-generated method stub
     Util.NotImplementedYetSoft();
-    return null;
+    if(isEmpty()){
+      return null;
   }
+    Node<E> behind = trailer.prev;
+    trailer.prev = behind.prev;
+    behind.prev.next = trailer;
+    size--;
+    return behind.element;
+  }
+
 
   @Override
   public E behind() {
     // TODO Auto-generated method stub
     Util.NotImplementedYetSoft();
-    return null;
+    if(isEmpty()) {
+      return null;
+    }
+    return trailer.prev.element;
   }
 
   @Override
   public void clear() {
     // TODO Auto-generated method stub
+    header.next = trailer;
+    trailer.prev = header;
+    size = 0;
     
   }
   
@@ -147,11 +182,11 @@ public class LLDeque<E> implements iDeque<E> {
   public Iterator<E> iterator() {
     // TODO Auto-generated method stub
     //Hint: Fill in the LLDequeIterator given below and return a new instance of it
-    return null;
+    return new LLDequeIterator();
   }
   
   private final class LLDequeIterator implements Iterator<E> {
-    
+    private Node<E> current = header.next;
     /*
      * 
      * ADD A CONSTRUCTOR IF NEEDED
@@ -162,14 +197,19 @@ public class LLDeque<E> implements iDeque<E> {
     @Override
     public boolean hasNext() {
       // TODO Auto-generated method stub
-      return false;
+      return current != trailer;
     }
 
     @Override
     public E next() {
       // TODO Auto-generated method stub
-      return null;
-    }        
+      if (!hasNext()) {
+        return null;
+      }
+      E element = current.element;
+      current = current.next;
+      return element;
+    }
   }
   
 }
