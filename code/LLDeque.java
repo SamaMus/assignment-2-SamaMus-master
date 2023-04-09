@@ -13,9 +13,11 @@ package code;
  * 
  * */
 
-import given.iDeque;
-import java.util.Iterator;
 import given.Util;
+import given.iDeque;
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 //If you have been following the class, it should be obvious by now how to implement a Deque wth a doubly linked list
 public class LLDeque<E> implements iDeque<E> {
